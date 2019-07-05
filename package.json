@@ -1,0 +1,32 @@
+{
+  "name": "rss-reader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fallen90",
+  "license": "ISC",
+  "dependencies": {
+    "cli-table3": "^0.5.1",
+    "fastify": "^2.6.0",
+    "lodash": "^4.17.11",
+    "lodash-id": "^0.14.0",
+    "lowdb": "^1.0.0",
+    "minimist": "^1.2.0",
+    "moment": "^2.24.0",
+    "object.fromentries": "^2.0.0",
+    "rss-parser": "^3.7.2",
+    "vorpal": "^1.12.0"
+  },
+  "pkg": {
+    "assets": [
+      "data/**/*"
+    ],
+    "targets": [
+      "node8"
+    ]
+  }
+}
