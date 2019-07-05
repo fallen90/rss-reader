@@ -12,13 +12,13 @@ console.log('Running in', process.cwd());
 if (argv.admin) {
     initDisplay();
 } else if (argv._.includes('add')) {
-    const { name, url } = argv;
-    if (name, url) {
+    const { url } = argv;
+    if (url) {
         addtoList({
             url: url
         });
     } else {
-        console.log('Add requires --name and --url');
+        console.log('Add requires --url');
     }
 } else if (argv._.includes('list')) {
     let options = { table: false };
@@ -26,7 +26,7 @@ if (argv.admin) {
     if (argv.unread) options = Object.assign(options, { unread: true });
     if (argv.table) options = Object.assign(options, { table: true });
 
-    if (argv.watchListId) options = Object.assign(options, { watchListId: argv.watchListId });
+    if (argv.watchListId || argv.id) options = Object.assign(options, { watchListId: argv.watchListId || argv.id });
 
     getList(options);
 } else if (argv._.includes('mark-read')) {

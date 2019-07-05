@@ -20,11 +20,13 @@ vorpal
     .command('list [watchListId]')
     .option('-u, --unread', 'list unread only')
     .option('-a,--all', 'list all')
+    .option('-t,--table')
     .autocomplete(watchListIds)
     .action(function (args, callback) {
         getList({
             watchListId : args.watchListId,
-            unread : args.options.unread
+            unread : args.options.unread,
+            table : args.table
         });
         callback();
     });
