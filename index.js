@@ -1,7 +1,5 @@
 require('dotenv').config();
 
-console.log(process.env.DB_PATH);
-
 const argv = require('minimist')(process.argv.slice(2));
 const initDisplay = require('./shared/Display');
 const updateList = require('./shared/updateList');
