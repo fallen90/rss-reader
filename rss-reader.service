@@ -1,0 +1,13 @@
+[Unit]
+Description=RSS Reader - Service
+Documentation=https://github.com/fallen90/rss-reader
+After=network.target
+
+[Service]
+Type=simple
+User=fallen90
+ExecStart=/usr/bin/node /home/fallen90/Projects/rss-reader/index.js start-server --port 9999
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
