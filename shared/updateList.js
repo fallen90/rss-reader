@@ -17,7 +17,7 @@ module.exports = function(){
                 const feedItem = Object.assign(item, {
                     watchListId : watchListItem.id,
                     isRead : false,
-                    pubDate : item.pubDate ? moment(item.pubDate).local().format('YYYY-MM-DD hh:mm:ss') : moment().local().format('YYYY-MM-DD hh:mm:ss'),
+                    pubDate : item.pubDate ? moment(new Date(item.pubDate)).local().format('YYYY-MM-DD hh:mm:ss') : moment().local().format('YYYY-MM-DD hh:mm:ss'),
                     hasPubDate : !!item.pubDate,
                     content : item.content ? item.content.replace(/(\r|\n|\t)/gm, '').replace(/(?:\s)\s/g, ''): ''
                 })
